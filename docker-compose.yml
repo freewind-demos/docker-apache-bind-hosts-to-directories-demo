@@ -6,4 +6,4 @@ services:
       - 10080:80
     volumes:
       - ./usr/local/apache2/htdocs/:/usr/local/apache2/htdocs/
-      - ./data:/data
+      - ./sites:/sites

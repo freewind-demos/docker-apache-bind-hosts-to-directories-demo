@@ -1,13 +1,16 @@
-Docker Apache Custom Config Add Directory Demo
+Docker Apache Bind Hosts to Directories Demo
 ==============================================
 
-想把一个自定义的目录加到apache的服务中，并且给它一个path
+让不同的域名访问不同的目录。
 
-在Docker中修改httpd.conf非常麻烦，所以我想到的办法就是在它的最后加一行，指向新建的`my.conf`，
-然后把内容写进`my.conf`.
+需要在`/etc/hosts`里加上：
 
-注意：似乎在apache2 2.4版本中，要使用`Require all granted`，否则会报类似'No permissions to view'这样的错误
+```
+127.0.0.1 aaa.test
+127.0.0.1 bbb.test
+```
 
+注意，如果使用`localhost:10080`访问时，它找不到对应的设置，会使用第一个`VirtualHost`即`aaa.test`对应的配置。
 
 ```
 npm run up

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "up": "docker-compose up -d",
-    "postup": "open http://localhost:10080/data",
+    "postup": "open http://localhost:10080/ && open http://aaa.test:10080 && open http://bbb.test:10080",
     "down": "docker-compose down"
   }
 }
